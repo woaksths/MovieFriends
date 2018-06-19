@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   }
 );
 
-sequelize.sync({force:true}).then(()=>{
+sequelize.sync().then(()=>{
   console.log('Databases sync')
 });
 module.exports = sequelize;

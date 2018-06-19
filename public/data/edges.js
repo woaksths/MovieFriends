@@ -1,0 +1,1 @@
+var edges = [{"from":"2","to":"1","weight":2},{"from":"4","to":"1","weight":1},{"from":"4","to":"2","weight":2},{"from":"5","to":"1","weight":2},{"from":"5","to":"2","weight":1}];

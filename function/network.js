@@ -1,7 +1,5 @@
 const fs = require('fs');
 const _ = require('lodash');
-const pcorr = require('compute-pcorr');
-const correlation = require('correlation-rank');
 const math = require('mathjs')
 const csv = fs.readFileSync('./test.csv').toString().split('\n');
 const raws = _.drop(csv);
@@ -19,7 +17,7 @@ for (var i = 0; i < edge.length; i++) {
       'to': movieId[j],
       'weight': edge[j][i]
     }
-    if (path.weight >= 2) {
+    if (path.weight >= 1 && path.from != path.to) {
       edgeList.push(path);
     }
   }
@@ -28,8 +26,10 @@ for (var i = 0; i < edge.length; i++) {
 for(var i=0; i<movieId.length; i++){
   nodeList.push({
     id: movieId[i],
-    name: movieId[i]+' mName'
+    name: movieId[i]+' mName',
+    size: edge[i][i]
   })
 }
+
 fs.writeFileSync('../public/data/edges.js', `var edges = ${JSON.stringify(edgeList)};`);
 fs.writeFileSync('../public/data/nodes.js', `var nodes = ${JSON.stringify(nodeList)};`);

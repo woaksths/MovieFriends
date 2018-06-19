@@ -9,7 +9,6 @@ var Movie = db.define('movie', {
   budget: {
     type: Sequelize.STRING,
     allowNull: false,
-    primaryKey: true
   },
   genres: {
     type: Sequelize.STRING,
