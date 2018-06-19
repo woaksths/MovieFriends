@@ -37,6 +37,8 @@ var Movie = db.define('movie', {
   popularity: {
     type: Sequelize.INTEGER,
     allowNull: false
-  }
+  },
+},{
+  timestamps:false
 });
 module.exports = Movie;
