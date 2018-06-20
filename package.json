@@ -10,6 +10,7 @@
     "compute-pcorr": "^1.0.0",
     "cookie-parser": "~1.4.3",
     "correlation-rank": "^0.2.0",
+    "csv": "^3.1.0",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
