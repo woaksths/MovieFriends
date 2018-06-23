@@ -12,7 +12,7 @@ var Movie = db.define('movie', {
   },
   genres: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   title: {
     type: Sequelize.STRING,
@@ -38,7 +38,19 @@ var Movie = db.define('movie', {
     type: Sequelize.INTEGER,
     allowNull: false
   },
-},{
-  timestamps:false
+  poster: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  release_date:{
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  overview:{
+    type: Sequelize.STRING,
+    allowNull: false
+  }
+}, {
+  timestamps: false
 });
 module.exports = Movie;

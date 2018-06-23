@@ -31,12 +31,16 @@ var transform = csv.transform(function (row) {
       runtime: row['runtime'],
       revenue: row['revenue'],
       popularity: row['popularity'],
+      poster: "https://image.tmdb.org/t/p/w600_and_h900_bestv2/" +row['poster_path'],
+      release_date: row['release_date'],
+      overview : row['overview']
     }
     Movie.create(movie)
       .then(function (m) {
-
+        console.log('success', m);
       })
       .catch(function (err) {
+        console.log(err);
       })
   }
 )
